@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  # Book Catalog Microservice
+  book_catalog:
+    build: ./book_catalog
+    environment:
+      DATABASE_URL: postgresql://my_database_17l4_user:E26gA2fgJHrtvSFhM4FiDbIY1yEhZGAu@dpg-crls8crv2p9s73e3m7tg-a.oregon-postgres.render.com/my_database_17l4
+    ports:
+      - "8000:8000"
+
+  # Inventory Management Microservice
+  inventory_management:
+    build: ./inventory_management
+    environment:
+      DATABASE_URL: postgresql://my_database_17l4_user:E26gA2fgJHrtvSFhM4FiDbIY1yEhZGAu@dpg-crls8crv2p9s73e3m7tg-a.oregon-postgres.render.com/my_database_17l4
+    ports:
+      - "8001:8000"
